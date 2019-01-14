@@ -1,0 +1,9 @@
+unittest:
+  platforms:
+#    - uno
+    - mega2560
+
+compile:
+  platforms:
+#    - uno
+    - mega2560
