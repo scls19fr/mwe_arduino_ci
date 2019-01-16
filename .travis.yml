@@ -3,7 +3,7 @@ language: ruby
 before_install:
    - wget https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip
    - unzip -o master.zip
-   - mkdir ~/Arduino/libraries/
+   - mkdir -p ~/Arduino/libraries/
    - mv ~/ITEADLIB_Arduino_Nextion-master ~/Arduino/libraries/
 script:
    - bundle install
