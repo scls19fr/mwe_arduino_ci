@@ -1,5 +1,10 @@
 sudo: false
 language: ruby
+before_install:
+   - wget https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip -o Nextion_master.zip
+   - unzip Nextion_master.zip
+   - mkdir ~/Arduino/libraries/
+   - mv ~/Nextion ~/Arduino/libraries/
 script:
    - bundle install
    - bundle exec arduino_ci_remote.rb
