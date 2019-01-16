@@ -1,10 +1,11 @@
 sudo: false
 language: ruby
-before_install:
-   - wget https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip
-   - unzip -o master.zip
-   - mkdir -p ~/Arduino/libraries/
-   - mv ITEADLIB_Arduino_Nextion-master ~/Arduino/libraries/
 script:
    - bundle install
+   - bundle exec ensure_arduino_installation.rb
+   - echo "Arduino library directory:"
+   - bundle exec arduino_library_location.rb
+   - wget https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip
+   - unzip -o master.zip
+   - mv ITEADLIB_Arduino_Nextion-master $(bundle exec arduino_library_location.rb)
    - bundle exec arduino_ci_remote.rb
